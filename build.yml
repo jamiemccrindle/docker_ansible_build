@@ -7,16 +7,17 @@
       tags: ['base']
 
   roles:
-#    - role: docker_environment
-#      tags: ['base']
-#    - role: known_hosts_github
-#      tags: ['base']
-#    - role: ansible
-#      tags: ['base']
-#    - role: java
-#      tags: ['jenkins']
-#     - role: jenkins
-#       tags: ['jenkins']
-     - role: docker_registry
-       tags: ['jenkins']
-#     - role: jenkins_deploy_keys
+    - role: docker_environment
+      tags: ['base']
+    - role: known_hosts_github
+      tags: ['base']
+    - role: ansible
+      tags: ['base']
+    - role: docker_registry
+      tags: ['base']
+    - role: java
+      tags: ['base', 'java']
+    - role: jenkins
+      tags: ['jenkins']
+    - role: jenkins_deploy_keys
+      tags: ['jenkins']
