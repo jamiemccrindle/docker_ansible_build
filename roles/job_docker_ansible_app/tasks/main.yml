@@ -1,0 +1,15 @@
+---
+- name: check if job exists
+  action: command java -jar {{ jenkins.cli_dest }} -s http://localhost:8080 list-jobs
+  register: tasks_installed
+
+- name: copy config
+  copy: src=config.xml dest=/tmp/config.xml
+
+- name: install task
+  action: shell java -jar {{ jenkins.cli_dest }} -s http://localhost:8080 create-job < /tmp/config.xml
+  when: tasks_installed.stdout.find('Docker and Ansible App') == -1
+
+- name: update task
+  action: shell java -jar {{ jenkins.cli_dest }} -s http://localhost:8080 update-job < /tmp/config.xml
+  when: tasks_installed.stdout.find('Docker and Ansible App') != -1
