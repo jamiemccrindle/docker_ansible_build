@@ -4,19 +4,14 @@
 
   pre_tasks:
     - lineinfile: line='127.0.0.1 docker-registry.example.com' dest=/etc/hosts
-      tags: ['base']
 
   roles:
     - role: docker_environment
-      tags: ['base']
+      docker_opts: '--storage-driver=aufs'
     - role: known_hosts_github
-      tags: ['base']
     - role: ansible
-      tags: ['base']
     - role: docker_registry
-      tags: ['base']
     - role: java
-      tags: ['base', 'java']
     - role: jenkins
       tags: ['jenkins']
     - role: jenkins_deploy_keys
