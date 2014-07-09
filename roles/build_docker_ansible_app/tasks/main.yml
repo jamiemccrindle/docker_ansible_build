@@ -5,6 +5,8 @@
 
 - command: docker pull docker-registry.example.com:5000/docker_ansible_app
 
+- docker: name="docker_ansible_app" image=docker-registry.example.com:5000/docker_ansible_app state=stopped
+
 - docker: name="docker_ansible_app" image=docker-registry.example.com:5000/docker_ansible_app state=absent
 
 - docker: image=docker-registry.example.com:5000/docker_ansible_app port="8000:8000" name="docker_ansible_app" state=running
