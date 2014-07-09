@@ -1,0 +1,11 @@
+---
+placeholder: 'placeholder'
+plugins:
+  - 'git'
+  - 'multiple-scms'
+# plugins:
+#   - 'ldap'
+#   - 'github'
+#   - 'translation'
+#   - 'preSCMbuildstep'
+#   - 'gravatar'

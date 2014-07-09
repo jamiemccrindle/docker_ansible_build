@@ -1,0 +1,6 @@
+- hosts: localhost
+  sudo: yes
+  connection: local
+
+  roles:
+     - role: build_docker_ansible_app

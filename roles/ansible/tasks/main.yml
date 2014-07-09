@@ -1,0 +1,9 @@
+---
+- apt: pkg={{ item }}
+  with_items:
+    - python-pip
+
+- pip: name={{ item }}
+  with_items:
+    - ansible
+    - docker-py

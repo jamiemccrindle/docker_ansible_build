@@ -1,0 +1,8 @@
+---
+jenkins_dest: /opt/jenkins
+jenkins:
+  deb:
+    repo: 'deb http://pkg.jenkins-ci.org/debian binary/' # Jenkins repository
+    key: 'http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key' # Jenkins key
+  cli_dest: '{{ jenkins_dest }}/jenkins-cli.jar' # Jenkins CLI destination
+  updates_dest: '{{ jenkins_dest }}/updates_jenkins.json' # Jenkins updates file

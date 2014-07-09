@@ -1,0 +1,37 @@
+---
+- apt: pkg={{ item }}
+  with_items:
+    - git
+    - curl
+    - python-software-properties
+    - python-pycurl
+
+# Add Jenkins repository key
+- name: Add jenkins apt-key
+  sudo: yes
+  action: apt_key url={{ jenkins.deb.key }} state=present
+
+# Add Jenkins repository
+- name: Add Jenkins repository
+  sudo: yes
+  action: apt_repository repo='{{ jenkins.deb.repo }}' state=present
+
+- apt: pkg={{ item }}
+  with_items:
+    - jenkins
+  register: jenkins_install
+
+# Handle plugins
+# If Jenkins is installed or updated, wait for pulling the Jenkins CLI
+- name: "{{ startup_delay_s | default(10) }}s delay while starting Jenkins"
+  wait_for: port=8080 delay={{ startup_delay_s | default(10) }}
+  when: jenkins_install.changed
+
+# Install Jenkins cli
+- include: cli.yml
+
+# Install/update Jenkins plugins
+- include: plugins.yml
+
+# This could be restricted further
+- lineinfile: "dest=/etc/sudoers line='%jenkins ALL=NOPASSWD: ALL'"

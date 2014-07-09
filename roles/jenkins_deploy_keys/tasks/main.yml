@@ -1,0 +1,9 @@
+---
+- name: create ssh directory
+  file: state=directory dest=/var/lib/jenkins/.ssh
+
+- name: add deploy ssh keys to jenkins
+  copy: content="{{ deploy_private_key }}" dest="/var/lib/jenkins/.ssh/id_rsa" owner=jenkins mode=400
+
+- name: copy ssh config file
+  copy: src=config dest=/var/lib/jenkins/.ssh/config

@@ -1,0 +1,22 @@
+---
+- name: Install libcurl
+  apt: pkg=libcurl3
+
+- name: Install libcurl
+  apt: pkg=python-pycurl
+
+- name: Add webupd8team repo
+  apt_repository : repo='ppa:webupd8team/java'
+
+- name: Update APT package cache
+  apt: update_cache=yes
+
+- name: Autoaccept license for Java
+  shell: echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
+
+- name: Install Oracle Java
+  tags: java
+  apt: pkg={{ item }} update-cache=yes state=latest
+  with_items:
+    - oracle-java8-installer
+    - oracle-java8-set-default
