@@ -1,0 +1,2 @@
+---
+- include: job.yml job=docker_and_ansible_app

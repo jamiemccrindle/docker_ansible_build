@@ -21,3 +21,5 @@
       tags: ['jenkins']
     - role: jenkins_deploy_keys
       tags: ['jenkins']
+    - role: jenkins_jobs
+      tags: ['jenkins_jobs']
