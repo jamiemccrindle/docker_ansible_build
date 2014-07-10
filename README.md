@@ -15,11 +15,14 @@ http://slides.com/jamiemccrindle/docker-and-ansible#/
 * [Python](https://www.python.org/)
 * [Ansible](http://www.ansible.com/home)
 
+### Notes
+
+* installing the docker registry will take quite a while. the step will look like this:
+
+    docker_registry | docker ports="5000:5000" image="registry"
+
 ### Building things
 
-_NOTE_: installing the docker registry will take quite a while. the step will look like this:
-
-    docker_registry | docker ports="5000:5000" image="registry" will take ages because
 
     # clone the repo
     git clone git@github.com:jamiemccrindle/docker_ansible_build.git
