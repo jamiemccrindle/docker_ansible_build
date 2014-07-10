@@ -49,6 +49,11 @@ Add the following to your .ssh/config file so that ansible can ssh into Vagrant
     ansible-playbook build.yml -i inventory/vagrant_build -vvvv
     
     
+### Running it
+
+Browse to http://localhost:8080 and click on the docker_and_ansible_app. Click 'build now' on the left hand side to 
+kick off a build. Once the build has completed, browse to http://localhost:8000 to see the app running.
+    
 ### Todo
 
 * Figure out why Jenkins doesn't see changes to the git repo
