@@ -17,6 +17,10 @@ http://slides.com/jamiemccrindle/docker-and-ansible#/
 
 # Building things
 
+_NOTE_: installing the docker registry will take quite a while. the step will look like this:
+
+    docker_registry | docker ports="5000:5000" image="registry" will take ages because
+
     # clone the repo
     git clone git@github.com:jamiemccrindle/docker_ansible_build.git
     # go into the build directory
@@ -25,6 +29,14 @@ http://slides.com/jamiemccrindle/docker-and-ansible#/
     vagrant up
     # run ansible with lots of debugging
     ansible-playbook build.yml -i inventory/vagrant_build -vvvv
+    
+    
+# Todo
+
+    * Figure out why Jenkins doesn't see changes to the git repo
+    * Run Jenkins in a container
+    
+# Troubleshooting
 
 ## What it is doing under the hood
 
