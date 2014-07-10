@@ -1,4 +1,4 @@
-### Docker and Ansible builder
+# Docker and Ansible builder
 
 This is an example of using Docker, Ansible, Vagrant and Jenkins to build a self contained continuous 
 integration environment. It was put together for the a presentation done at Docker London. The slides 
@@ -8,14 +8,14 @@ http://slides.com/jamiemccrindle/docker-and-ansible#/
 
 ## Getting started
 
-# Requirements
+### Requirements
 
 * [Vagrant](http://www.vagrantup.com/)
 * [git](http://git-scm.com/)
 * [Python](https://www.python.org/)
 * [Ansible](http://www.ansible.com/home)
 
-# Building things
+### Building things
 
 _NOTE_: installing the docker registry will take quite a while. the step will look like this:
 
@@ -31,12 +31,12 @@ _NOTE_: installing the docker registry will take quite a while. the step will lo
     ansible-playbook build.yml -i inventory/vagrant_build -vvvv
     
     
-# Todo
+### Todo
 
     * Figure out why Jenkins doesn't see changes to the git repo
     * Run Jenkins in a container
     
-# Troubleshooting
+### Troubleshooting
 
 ## What it is doing under the hood
 
