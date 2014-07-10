@@ -51,8 +51,8 @@ Add the following to your .ssh/config file so that ansible can ssh into Vagrant
     
 ### Running it
 
-Browse to http://localhost:8080 and click on the docker_and_ansible_app. Click 'build now' on the left hand side to 
-kick off a build. Once the build has completed, browse to http://localhost:8000 to see the app running.
+Browse to [http://localhost:8080](http://localhost:8080) and click on the docker_and_ansible_app. Click 'build now' on the left hand side to 
+kick off a build. Once the build has completed, browse to [http://localhost:8080](http://localhost:8000) to see the app running.
     
 ### Todo
 
