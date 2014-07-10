@@ -15,6 +15,18 @@ http://slides.com/jamiemccrindle/docker-and-ansible#/
 * [Python](https://www.python.org/)
 * [Ansible](http://www.ansible.com/home)
 
+### Vagrant SSH
+
+Add the following to your .ssh/config file so that ansible can ssh into Vagrant
+
+    Host vagrant
+      HostName 127.0.0.1
+      User vagrant
+      Port 2222
+      UserKnownHostsFile /dev/null
+      StrictHostKeyChecking no
+      IdentityFile ~/.vagrant.d/insecure_private_key
+
 ### Notes
 
 * installing the docker registry will take quite a while. the step will look like this:
