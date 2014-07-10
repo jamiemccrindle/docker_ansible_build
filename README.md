@@ -58,8 +58,8 @@ Add the following to your .ssh/config file so that ansible can ssh into Vagrant
 
 * It can take a while for jenkins to come up, which will result in a 503 when the app tries to get the cli, just rerun 
 
-    failed: [vagrant] => {"dest": "/opt/jenkins/jenkins-cli.jar", "failed": true, "response": "HTTP Error 503: Service Unavailable", "state": "absent", "status_code": 503, "url": "http://localhost:8080/jnlpJars/jenkins-cli.jar"}
-    msg: Request failed
+        failed: [vagrant] => {"dest": "/opt/jenkins/jenkins-cli.jar", "failed": true, "response": "HTTP Error 503: Service Unavailable", "state": "absent", "status_code": 503, "url": "http://localhost:8080/jnlpJars/jenkins-cli.jar"}
+        msg: Request failed
 
 ## What it is doing under the hood
 
