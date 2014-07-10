@@ -32,6 +32,9 @@ Add the following to your .ssh/config file so that ansible can ssh into Vagrant
 * installing the docker registry will take quite a while. the step will look like this:
 
         docker_registry | docker ports="5000:5000" image="registry"
+        
+* the installation process should be idempotent so if it gets stuck, you should be able
+  to rerun it
 
 ### Building things
 
