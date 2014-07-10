@@ -14,6 +14,10 @@
     - role: java
     - role: jenkins
       tags: ['jenkins']
+# this role is for those of us that need to use private repos
+# uncomment and use ansible vault to add your deploy key into
+# jenkins_deploy_keys/defaults/main.yml. remember to add your
+# deploy key into github / bitbucket / etc
 #    - role: jenkins_deploy_keys
 #      tags: ['jenkins']
     - role: jenkins_jobs
